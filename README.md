@@ -66,10 +66,10 @@ errors: No known data errors
 12. Потом определил настройки командой zpool get all newotus
 
 [root@zfs ~]# zpool get all newotus
-NAME     PROPERTY                       VALUE                          SOURCE
-newotus  size                           480M                           -
-newotus  capacity                       0%                             -
-newotus  altroot                        -                              default
+            NAME     PROPERTY                       VALUE                          SOURCE
+            newotus  size                           480M                           -
+            newotus  capacity                       0%                             -
+            newotus  altroot                        -                              default
 newotus  health                         ONLINE                         -
 newotus  guid                           6554193320433390805            -
 newotus  version                        -                              default
