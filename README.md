@@ -64,63 +64,82 @@ config:
 
 errors: No known data errors
 12. Потом определил настройки командой ``zpool get all newotus``
+[root@zfs ~]# zfs get all otus
+NAME  PROPERTY              VALUE                  SOURCE
+otus  type                  filesystem             -
+otus  creation              Fri May 15  4:00 2020  -
+otus  used                  2.04M                  -
+otus  available             350M                   -
+otus  referenced            24K                    -
+otus  compressratio         1.00x                  -
+otus  mounted               yes                    -
+otus  quota                 none                   default
+otus  reservation           none                   default
+otus  recordsize            128K                   local
+otus  mountpoint            /otus                  default
+otus  sharenfs              off                    default
+otus  checksum              sha256                 local
+otus  compression           zle                    local
+otus  atime                 on                     default
+otus  devices               on                     default
+otus  exec                  on                     default
+otus  setuid                on                     default
+otus  readonly              off                    default
+otus  zoned                 off                    default
+otus  snapdir               hidden                 default
+otus  aclinherit            restricted             default
+otus  createtxg             1                      -
+otus  canmount              on                     default
+otus  xattr                 on                     default
+otus  copies                1                      default
+otus  version               5                      -
+otus  utf8only              off                    -
+otus  normalization         none                   -
+otus  casesensitivity       sensitive              -
+otus  vscan                 off                    default
+otus  nbmand                off                    default
+otus  sharesmb              off                    default
+otus  refquota              none                   default
+otus  refreservation        none                   default
+otus  guid                  14592242904030363272   -
+otus  primarycache          all                    default
+otus  secondarycache        all                    default
+otus  usedbysnapshots       0B                     -
+otus  usedbydataset         24K                    -
+otus  usedbychildren        2.01M                  -
+otus  usedbyrefreservation  0B                     -
+otus  logbias               latency                default
+otus  objsetid              54                     -
+otus  dedup                 off                    default
+otus  mlslabel              none                   default
+otus  sync                  standard               default
+otus  dnodesize             legacy                 default
+otus  refcompressratio      1.00x                  -
+otus  written               24K                    -
+otus  logicalused           1020K                  -
+otus  logicalreferenced     12K                    -
+otus  volmode               default                default
+otus  filesystem_limit      none                   default
+otus  snapshot_limit        none                   default
+otus  filesystem_count      none                   default
+otus  snapshot_count        none                   default
+otus  snapdev               hidden                 default
+otus  acltype               off                    default
+otus  context               none                   default
+otus  fscontext             none                   default
+otus  defcontext            none                   default
+otus  rootcontext           none                   default
+otus  relatime              off                    default
+otus  redundant_metadata    all                    default
+otus  overlay               off                    default
+otus  encryption            off                    default
+otus  keylocation           none                   default
+otus  keyformat             none                   default
+otus  pbkdf2iters           0                      default
+otus  special_small_blocks  0                      default
+[root@zfs ~]#  available
 
-:
-            NAME     PROPERTY                       VALUE                          SOURCE  
-            newotus  size                           480M                           -  
-            newotus  capacity                       0%                             -  
-            newotus  altroot                        -                              default  
-            newotus  health                         ONLINE                         -  
-            newotus  guid                           6554193320433390805            -  
-            newotus  version                        -                              default  
-            newotus  bootfs                         -                              default 
-            newotus  delegation                     on                             default  
-            newotus  autoreplace                    off                            default  
-            newotus  cachefile                      -                              default  
-            newotus  failmode                       wait                           default  
-            newotus  listsnapshots                  off                            default  
-            newotus  autoexpand                     off                            default  
-            newotus  dedupditto                     0                              default  
-            newotus  dedupratio                     1.00x                          -  
-            newotus  free                           478M                           -  
-            newotus  allocated                      2.09M                          -  
-            newotus  readonly                       off                            -  
-            newotus  ashift                         0                              default  
-            newotus  comment                        -                              default  
-            newotus  expandsize                     -                              -  
-            newotus  freeing                        0                              -  
-            newotus  fragmentation                  0%                             -  
-            newotus  leaked                         0                              -  
-            newotus  multihost                      off                            default  
-            newotus  checkpoint                     -                              -  
-            newotus  load_guid                      6713467811825002750            -  
-            newotus  autotrim                       off                            default  
-            newotus  feature@async_destroy          enabled                        local  
-            newotus  feature@empty_bpobj            active                         local  
-            newotus  feature@lz4_compress           active                         local  
-            newotus  feature@multi_vdev_crash_dump  enabled                        local  
-            newotus  feature@spacemap_histogram     active                         local  
-            newotus  feature@enabled_txg            active                         local  
-            newotus  feature@hole_birth             active                         local  
-            newotus  feature@extensible_dataset     active                         local  
-            newotus  feature@embedded_data          active                         local  
-            newotus  feature@bookmarks              enabled                        local  
-            newotus  feature@filesystem_limits      enabled                        local  
-            newotus  feature@large_blocks           enabled                        local  
-            newotus  feature@large_dnode            enabled                        local  
-            newotus  feature@sha512                 enabled                        local  
-            newotus  feature@skein                  enabled                        local  
-            newotus  feature@edonr                  enabled                        local  
-            newotus  feature@userobj_accounting     active                         local  
-            newotus  feature@encryption             enabled                        local  
-                  newotus  feature@project_quota          active                         local  
-                  newotus  feature@device_removal         enabled                        local  
-                  newotus  feature@obsolete_counts        enabled                        local  
-              newotus  feature@zpool_checkpoint       enabled                        local  
-              newotus  feature@spacemap_v2            active                         local  
-            newotus feature@allocation_classes     enabled                        local  
-            newotus  feature@resilver_defer         enabled                        local  
-            newotus  feature@bookmark_v2            enabled                        local  >
+
  
 
 
