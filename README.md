@@ -65,7 +65,7 @@ config:
 errors: No known data errors
 12. Потом определил настройки командой ``zpool get all newotus``
 
-[root@zfs ~]# zpool get all newotus
+< [root@zfs ~]# zpool get all newotus
             NAME     PROPERTY                       VALUE                          SOURCE  
             newotus  size                           480M                           -  
             newotus  capacity                       0%                             -  
@@ -120,7 +120,7 @@ errors: No known data errors
             newotus  feature@spacemap_v2            active                         local  
             newotus  feature@allocation_classes     enabled                        local  
             newotus  feature@resilver_defer         enabled                        local  
-            newotus  feature@bookmark_v2            enabled                        local  
+            newotus  feature@bookmark_v2            enabled                        local  >
  
 
 
