@@ -11,23 +11,23 @@
 
 **2. Выполенение задания**
 
-1. Создал виртуальную машину оснываваясь на примере указаным в методичке. Создал вагрантфайл, запустил его командой ''vagrant up''. Подключился к виртуальной машине командой ''vagrant ssh''. Получил корневой доступ ''sudo -i''
+1. Создал виртуальную машину оснываваясь на примере указаным в методичке. Создал вагрантфайл, запустил его командой ``vagrant up``. Подключился к виртуальной машине командой ``vagrant ssh``. Получил корневой доступ ``sudo -i``
 2. Начал анализ определения алгоритма с наилучшим сжатием.
 3. Создал 4 пула используюя поочередно команды.
-''zpool create otus1 mirror /dev/sdb /dev/sdc''
-zpool create otus2 mirror /dev/sdd /dev/sde
-zpool create otus3 mirror /dev/sdf /dev/sdg
-zpool create otus4 mirror /dev/sdh /dev/sdi
+``zpool create otus1 mirror /dev/sdb /dev/sdc``
+``zpool create otus2 mirror /dev/sdd /dev/sde``
+``zpool create otus3 mirror /dev/sdf /dev/sdg``
+``zpool create otus4 mirror /dev/sdh /dev/sdi``
 4. Добавил разные алгоритмы сжатия в каждую файловую систему, использую следующие команды
-zfs set compression=lzjb otus1
-zfs set compression=lz4 otus2
-zfs set compression=gzip-9 otus3
-zfs set compression=zle otus4
+``zfs set compression=lzjb otus1``
+``zfs set compression=lz4 otus2``
+``zfs set compression=gzip-9 otus3``
+``zfs set compression=zle otus4``
 5. Скачал текстовый файл по во все пулы, для примера заполенения использовал команду
-do wget -P /otus$i https://gutenberg.org/cache/epub/2600/pg2600.converter.log; done
+``do wget -P /otus$i https://gutenberg.org/cache/epub/2600/pg2600.converter.log; done``
 6. Проверил, сколько места занимает один и тот же файл в разных пулах. 
 
-zfs list
+``zfs list``
 NAME    USED  AVAIL     REFER  MOUNTPOINT
 otus1  21.6M   330M     21.5M  /otus1
 otus2  17.7M   334M     17.6M  /otus2
@@ -36,20 +36,20 @@ otus4  39.0M   313M     38.9M  /otus4
 
 7. Проверил степень сжатия файлов.
 
-zfs get all | grep compressratio | grep -v ref
+``zfs get all | grep compressratio | grep -v ref``
 otus1  compressratio         1.80x                  -
 otus2  compressratio         2.21x                  -
 otus3  compressratio         3.63x                  -
 otus4  compressratio         1.00x                  -
 
-Проанализировав вывод команды zfs get all | grep compressratio | grep -v ref, пришел к выводу, что алгоритм gzip-9 самый эффективный по сжатию.
+Проанализировав вывод команды ``zfs get all | grep compressratio | grep -v ref``, пришел к выводу, что алгоритм gzip-9 самый эффективный по сжатию.
 
 8. Скачал архив в домашний каталог. Команда ниже. 
-wget -O archive.tar.gz --no-check-certificate 'https://drive.google.com/u/0/uc?id=1KRBNW33QWqbvbVHa3hLJivOAt60yukkg&export=download'
-9. Разархировал архив при помощи команды: tar -xzvf archive.tar.gz
-10. Импортировал пул полученный из архива в ОС применив команду: zpool import -d zpoolexport/ newotus
-11. Командой zpool status получил информацию о составе импортированного пула, вывод команды ниже.
-pool: otus
+``wget -O archive.tar.gz --no-check-certificate 'https://drive.google.com/u/0/uc?id=1KRBNW33QWqbvbVHa3hLJivOAt60yukkg&export=download'``
+9. Разархировал архив при помощи команды: ``tar -xzvf archive.tar.gz``
+10. Импортировал пул полученный из архива в ОС применив команду: ``zpool import -d zpoolexport/ newotus``
+11. Командой ``zpool status`` получил информацию о составе импортированного пула, вывод команды ниже.
+pool: newotus
  state: ONLINE
   scan: none requested
 config:
@@ -63,7 +63,7 @@ config:
 
 
 errors: No known data errors
-12. Потом определил настройки командой zpool get all newotus
+12. Потом определил настройки командой ``zpool get all newotus``
 
 [root@zfs ~]# zpool get all newotus
             NAME     PROPERTY                       VALUE                          SOURCE
@@ -124,9 +124,9 @@ errors: No known data errors
 
 
 
-13. Скачал файл, указанный в задании. wget -O otus_task2.file --no-check-certificate "https://drive.google.com/u/0/uc?id=1gH8gCL9y7Nd5Ti3IRmplZPF1XjzxeRAG&export=download"
-14. Восстановил файловую систему из снепшота: zfs receive otus/test@today < otus_task2.file
-15. Нашел файл с именем "sevret_message": find /otus/test -name "secret_message"
-16. Посмотрел содержимое найденного файла, при помощи команды: cat /otus/test/task1/file_mess/secret_message.
+13. Скачал файл, указанный в задании. ``wget -O otus_task2.file --no-check-certificate "https://drive.google.com/u/0/uc?id=1gH8gCL9y7Nd5Ti3IRmplZPF1XjzxeRAG&export=download"``
+14. Восстановил файловую систему из снепшота: ``zfs receive otus/test@today < otus_task2.file``
+15. Нашел файл с именем "sevret_message": ``find /otus/test -name "secret_message"``
+16. Посмотрел содержимое найденного файла, при помощи команды: ``cat /otus/test/task1/file_mess/secret_message.``
 Содержимое файла это url: https://github.com/sindresorhus/awesome
 
