@@ -63,8 +63,9 @@ config:
 
 
 errors: No known data errors
-12. Потом определил настройки командой ``zpool get all newotus``
-[root@zfs ~]# zfs get all otus
+12. Потом определил настройки командой ``zpool get all newotus``  
+```
+[root@zfs ~]# zfs get all newotus
 NAME  PROPERTY              VALUE                  SOURCE
 otus  type                  filesystem             -
 otus  creation              Fri May 15  4:00 2020  -
@@ -137,12 +138,8 @@ otus  keylocation           none                   default
 otus  keyformat             none                   default
 otus  pbkdf2iters           0                      default
 otus  special_small_blocks  0                      default
-[root@zfs ~]#  available
-
-
- 
-
-
+[root@zfs ~]#  available  
+```
 13. Скачал файл, указанный в задании. ``wget -O otus_task2.file --no-check-certificate "https://drive.google.com/u/0/uc?id=1gH8gCL9y7Nd5Ti3IRmplZPF1XjzxeRAG&export=download"``
 14. Восстановил файловую систему из снепшота: ``zfs receive otus/test@today < otus_task2.file``
 15. Нашел файл с именем "sevret_message": ``find /otus/test -name "secret_message"``
