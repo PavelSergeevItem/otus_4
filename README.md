@@ -49,9 +49,9 @@ otus4  compressratio         1.00x                  -
 9. Разархировал архив при помощи команды: ``tar -xzvf archive.tar.gz``
 10. Импортировал пул полученный из архива в ОС применив команду: ``zpool import -d zpoolexport/ newotus``
 11. Командой ``zpool status`` получил информацию о составе импортированного пула, вывод команды ниже.
-pool: newotus
- state: ONLINE
-  scan: none requested
+ pool: newotus  
+ state: ONLINE  
+ scan: none requested  
 config:
 
 
@@ -65,7 +65,7 @@ config:
 errors: No known data errors
 12. Потом определил настройки командой ``zpool get all newotus``
 
-<[root@zfs ~]# zpool get all newotus
+:
             NAME     PROPERTY                       VALUE                          SOURCE  
             newotus  size                           480M                           -  
             newotus  capacity                       0%                             -  
