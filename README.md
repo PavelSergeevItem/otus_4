@@ -49,20 +49,22 @@ otus4  compressratio         1.00x                  -
 9. Разархировал архив при помощи команды: ``tar -xzvf archive.tar.gz``
 10. Импортировал пул полученный из архива в ОС применив команду: ``zpool import -d zpoolexport/ newotus``
 11. Командой ``zpool status`` получил информацию о составе импортированного пула, вывод команды ниже.
- pool: newotus  
- state: ONLINE  
- scan: none requested  
-config:
+
+```
+pool: newotus  
+  state: ONLINE  
+   scan: none requested  
+ config:
 
 
-        NAME                         STATE     READ WRITE CKSUM
-        otus                         ONLINE       0     0     0
-          mirror-0                   ONLINE       0     0     0
-            /root/zpoolexport/filea  ONLINE       0     0     0
-            /root/zpoolexport/fileb  ONLINE       0     0     0
-
-
+        NAME                            STATE     READ WRITE CKSUM
+        newotus                         ONLINE       0     0     0
+          mirror-0                      ONLINE       0     0     0
+            /root/zpoolexport/filea     ONLINE       0     0     0
+            /root/zpoolexport/fileb     ONLINE       0     0     0
+            
 errors: No known data errors
+```
 12. Потом определил настройки командой ``zpool get all newotus``  
 ```
 [root@zfs ~]# zfs get all newotus
