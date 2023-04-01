@@ -11,10 +11,10 @@
 
 **2. Выполенение задания**
 
-1. Создал виртуальную машину оснываваясь на примере указаным в методичке. Создал вагрантфайл, запустил его командой vagrant up. Подключился к виртуальной машине командой vagrant ssh. Получил корневой доступ sudo -i
+1. Создал виртуальную машину оснываваясь на примере указаным в методичке. Создал вагрантфайл, запустил его командой ''vagrant up''. Подключился к виртуальной машине командой ''vagrant ssh''. Получил корневой доступ ''sudo -i''
 2. Начал анализ определения алгоритма с наилучшим сжатием.
 3. Создал 4 пула используюя поочередно команды.
-zpool create otus1 mirror /dev/sdb /dev/sdc
+''zpool create otus1 mirror /dev/sdb /dev/sdc''
 zpool create otus2 mirror /dev/sdd /dev/sde
 zpool create otus3 mirror /dev/sdf /dev/sdg
 zpool create otus4 mirror /dev/sdh /dev/sdi
@@ -70,57 +70,57 @@ errors: No known data errors
             newotus  size                           480M                           -
             newotus  capacity                       0%                             -
             newotus  altroot                        -                              default
-newotus  health                         ONLINE                         -
-newotus  guid                           6554193320433390805            -
-newotus  version                        -                              default
-newotus  bootfs                         -                              default
-newotus  delegation                     on                             default
-newotus  autoreplace                    off                            default
-newotus  cachefile                      -                              default
-newotus  failmode                       wait                           default
-newotus  listsnapshots                  off                            default
-newotus  autoexpand                     off                            default
-newotus  dedupditto                     0                              default
-newotus  dedupratio                     1.00x                          -
-newotus  free                           478M                           -
-newotus  allocated                      2.09M                          -
-newotus  readonly                       off                            -
-newotus  ashift                         0                              default
-newotus  comment                        -                              default
-newotus  expandsize                     -                              -
-newotus  freeing                        0                              -
-newotus  fragmentation                  0%                             -
-newotus  leaked                         0                              -
-newotus  multihost                      off                            default
-newotus  checkpoint                     -                              -
-newotus  load_guid                      6713467811825002750            -
-newotus  autotrim                       off                            default
-newotus  feature@async_destroy          enabled                        local
-newotus  feature@empty_bpobj            active                         local
-newotus  feature@lz4_compress           active                         local
-newotus  feature@multi_vdev_crash_dump  enabled                        local
-newotus  feature@spacemap_histogram     active                         local
-newotus  feature@enabled_txg            active                         local
-newotus  feature@hole_birth             active                         local
-newotus  feature@extensible_dataset     active                         local
-newotus  feature@embedded_data          active                         local
-newotus  feature@bookmarks              enabled                        local
-newotus  feature@filesystem_limits      enabled                        local
-newotus  feature@large_blocks           enabled                        local
-newotus  feature@large_dnode            enabled                        local
-newotus  feature@sha512                 enabled                        local
-newotus  feature@skein                  enabled                        local
-newotus  feature@edonr                  enabled                        local
-newotus  feature@userobj_accounting     active                         local
-newotus  feature@encryption             enabled                        local
-newotus  feature@project_quota          active                         local
-newotus  feature@device_removal         enabled                        local
-newotus  feature@obsolete_counts        enabled                        local
-newotus  feature@zpool_checkpoint       enabled                        local
-newotus  feature@spacemap_v2            active                         local
-newotus  feature@allocation_classes     enabled                        local
-newotus  feature@resilver_defer         enabled                        local
-newotus  feature@bookmark_v2            enabled                        local
+            newotus  health                         ONLINE                         -
+            newotus  guid                           6554193320433390805            -
+            newotus  version                        -                              default
+            newotus  bootfs                         -                              default
+            newotus  delegation                     on                             default
+            newotus  autoreplace                    off                            default
+            newotus  cachefile                      -                              default
+            newotus  failmode                       wait                           default
+            newotus  listsnapshots                  off                            default
+            newotus  autoexpand                     off                            default
+            newotus  dedupditto                     0                              default
+            newotus  dedupratio                     1.00x                          -
+            newotus  free                           478M                           -
+            newotus  allocated                      2.09M                          -
+            newotus  readonly                       off                            -
+            newotus  ashift                         0                              default
+            newotus  comment                        -                              default
+            newotus  expandsize                     -                              -
+            newotus  freeing                        0                              -
+            newotus  fragmentation                  0%                             -
+            newotus  leaked                         0                              -
+            newotus  multihost                      off                            default
+            newotus  checkpoint                     -                              -
+            newotus  load_guid                      6713467811825002750            -
+            newotus  autotrim                       off                            default
+            newotus  feature@async_destroy          enabled                        local
+            newotus  feature@empty_bpobj            active                         local
+            newotus  feature@lz4_compress           active                         local
+            newotus  feature@multi_vdev_crash_dump  enabled                        local
+            newotus  feature@spacemap_histogram     active                         local
+            newotus  feature@enabled_txg            active                         local
+            newotus  feature@hole_birth             active                         local
+            newotus  feature@extensible_dataset     active                         local
+            newotus  feature@embedded_data          active                         local
+            newotus  feature@bookmarks              enabled                        local
+            newotus  feature@filesystem_limits      enabled                        local
+            newotus  feature@large_blocks           enabled                        local
+            newotus  feature@large_dnode            enabled                        local
+            newotus  feature@sha512                 enabled                        local
+            newotus  feature@skein                  enabled                        local
+            newotus  feature@edonr                  enabled                        local
+            newotus  feature@userobj_accounting     active                         local
+            newotus  feature@encryption             enabled                        local
+            newotus  feature@project_quota          active                         local
+            newotus  feature@device_removal         enabled                        local
+            newotus  feature@obsolete_counts        enabled                        local
+            newotus  feature@zpool_checkpoint       enabled                        local
+            newotus  feature@spacemap_v2            active                         local
+            newotus  feature@allocation_classes     enabled                        local
+            newotus  feature@resilver_defer         enabled                        local
+            newotus  feature@bookmark_v2            enabled                        local
 
 
 
