@@ -113,12 +113,12 @@ errors: No known data errors
             newotus  feature@edonr                  enabled                        local  
             newotus  feature@userobj_accounting     active                         local  
             newotus  feature@encryption             enabled                        local  
-            newotus  feature@project_quota          active                         local  
-            newotus  feature@device_removal         enabled                        local  
-            newotus  feature@obsolete_counts        enabled                        local  
-            newotus  feature@zpool_checkpoint       enabled                        local  
-            newotus  feature@spacemap_v2            active                         local  
-            newotus  feature@allocation_classes     enabled                        local  
+                  newotus  feature@project_quota          active                         local  
+                  newotus  feature@device_removal         enabled                        local  
+                  newotus  feature@obsolete_counts        enabled                        local  
+              newotus  feature@zpool_checkpoint       enabled                        local  
+              newotus  feature@spacemap_v2            active                         local  
+            newotus feature@allocation_classes     enabled                        local  
             newotus  feature@resilver_defer         enabled                        local  
             newotus  feature@bookmark_v2            enabled                        local  >
  
