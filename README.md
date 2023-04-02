@@ -27,8 +27,8 @@ zfs set compression=lz4 otus2
 zfs set compression=gzip-9 otus3
 zfs set compression=zle otus4
 ```
-5. Скачал текстовый файл по во все пулы, для примера заполнения использовал команду
-``do wget -P /otus$i https://gutenberg.org/cache/epub/2600/pg2600.converter.log; done``
+5. Скачал текстовый файл по во все пулы, для примера заполнения использовал команду  
+```do wget -P /otus$i https://gutenberg.org/cache/epub/2600/pg2600.converter.log; done```
 6. Проверил, сколько места занимает один и тот же файл в разных пулах. 
 
 ``zfs list``
@@ -149,10 +149,11 @@ newotus  pbkdf2iters           0                      default
 newotus  special_small_blocks  0                      default
 [root@zfs ~]#  available  
 ```
-13. Скачал файл, указанный в задании. ``wget -O otus_task2.file --no-check-certificate "https://drive.google.com/u/0/uc?id=1gH8gCL9y7Nd5Ti3IRmplZPF1XjzxeRAG&export=download"``
-14. Восстановил файловую систему из снепшота: ``zfs receive otus/test@today < otus_task2.file``
-15. Нашел файл с именем "sevret_message": ``find /otus/test -name "secret_message"``
-16. Посмотрел содержимое найденного файла, при помощи команды: ``cat /otus/test/task1/file_mess/secret_message.``
+13. Скачал файл, указанный в задании.  
+```wget -O otus_task2.file --no-check-certificate "https://drive.google.com/u/0/uc?id=1gH8gCL9y7Nd5Ti3IRmplZPF1XjzxeRAG&export=download"```
+15. Восстановил файловую систему из снепшота: ``zfs receive otus/test@today < otus_task2.file``
+16. Нашел файл с именем "sevret_message": ``find /otus/test -name "secret_message"``
+17. Посмотрел содержимое найденного файла, при помощи команды: ``cat /otus/test/task1/file_mess/secret_message.``
 Содержимое файла это url: https://github.com/sindresorhus/awesome
 17. Написал баш скрипт, добавил его в вагрантфайл. Bash-скриптом, который будет конфигурировать сервер.
 18. Написал readme на гитхабе. Закинул вагрантфайл в свой репозиторий.
