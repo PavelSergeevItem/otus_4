@@ -55,7 +55,9 @@ otus4  compressratio         1.00x                  -
 Проанализировав вывод команды ``zfs get all | grep compressratio | grep -v ref``, пришел к выводу, что алгоритм gzip-9 самый эффективный по сжатию.
 
 8. Скачал архив в домашний каталог. Команда ниже. 
+
 ```wget -O archive.tar.gz --no-check-certificate 'https://drive.google.com/u/0/uc?id=1KRBNW33QWqbvbVHa3hLJivOAt60yukkg&export=download'```
+
 9. Разархировал архив при помощи команды: ``tar -xzvf archive.tar.gz``
 10. Импортировал пул полученный из архива в ОС применив команду: ``zpool import -d zpoolexport/ newotus``
 11. Командой ``zpool status`` получил информацию о составе импортированного пула, вывод команды ниже.
