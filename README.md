@@ -28,7 +28,9 @@ zfs set compression=gzip-9 otus3
 zfs set compression=zle otus4
 ```
 5. Скачал текстовый файл по во все пулы, для примера заполнения использовал команду  
+ 
 ```do wget -P /otus$i https://gutenberg.org/cache/epub/2600/pg2600.converter.log; done```
+
 6. Проверил, сколько места занимает один и тот же файл в разных пулах. 
 
 ``zfs list``
@@ -42,7 +44,8 @@ otus4  39.0M   313M     38.9M  /otus4
 
 7. Проверил степень сжатия файлов.
 
-``zfs get all | grep compressratio | grep -v ref``
+``zfs get all | grep compressratio | grep -v ref``  
+
 ```
 otus1  compressratio         1.80x                  -
 otus2  compressratio         2.21x                  -
