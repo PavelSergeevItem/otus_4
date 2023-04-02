@@ -15,35 +15,40 @@
 2. Начал анализ определения алгоритма с наилучшим сжатием.
 3. Создал 4 пула используюя поочередно команды.
 ```
-``zpool create otus1 mirror /dev/sdb /dev/sdc``
-``zpool create otus2 mirror /dev/sdd /dev/sde``
-``zpool create otus3 mirror /dev/sdf /dev/sdg``
-``zpool create otus4 mirror /dev/sdh /dev/sdi``
+zpool create otus1 mirror /dev/sdb /dev/sdc
+zpool create otus2 mirror /dev/sdd /dev/sde
+zpool create otus3 mirror /dev/sdf /dev/sdg
+zpool create otus4 mirror /dev/sdh /dev/sdi
 ```
 4. Добавил разные алгоритмы сжатия в каждую файловую систему, использую следующие команды
-``zfs set compression=lzjb otus1``
-``zfs set compression=lz4 otus2``
-``zfs set compression=gzip-9 otus3``
-``zfs set compression=zle otus4``
+```
+zfs set compression=lzjb otus1
+zfs set compression=lz4 otus2
+zfs set compression=gzip-9 otus3
+zfs set compression=zle otus4
+```
 5. Скачал текстовый файл по во все пулы, для примера заполнения использовал команду
 ``do wget -P /otus$i https://gutenberg.org/cache/epub/2600/pg2600.converter.log; done``
 6. Проверил, сколько места занимает один и тот же файл в разных пулах. 
 
 ``zfs list``
+```
 NAME    USED  AVAIL     REFER  MOUNTPOINT
 otus1  21.6M   330M     21.5M  /otus1
 otus2  17.7M   334M     17.6M  /otus2
 otus3  10.8M   341M     10.7M  /otus3
 otus4  39.0M   313M     38.9M  /otus4
+```
 
 7. Проверил степень сжатия файлов.
 
 ``zfs get all | grep compressratio | grep -v ref``
+```
 otus1  compressratio         1.80x                  -
 otus2  compressratio         2.21x                  -
 otus3  compressratio         3.63x                  -
 otus4  compressratio         1.00x                  -
-
+```
 Проанализировав вывод команды ``zfs get all | grep compressratio | grep -v ref``, пришел к выводу, что алгоритм gzip-9 самый эффективный по сжатию.
 
 8. Скачал архив в домашний каталог. Команда ниже. 
