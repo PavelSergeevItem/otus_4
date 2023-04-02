@@ -13,14 +13,14 @@
 
 1. Создал виртуальную машину основываясь на примере указанным в методичке. Создал вагрантфайл, запустил его командой ``vagrant up``. Подключился к виртуальной машине командой ``vagrant ssh``. Получил корневой доступ ``sudo -i``
 2. Начал анализ определения алгоритма с наилучшим сжатием.
-3. Создал 4 пула используюя поочередно команды.
+3. Создал 4 пула используюя поочередно команды:
 ```
 zpool create otus1 mirror /dev/sdb /dev/sdc
 zpool create otus2 mirror /dev/sdd /dev/sde
 zpool create otus3 mirror /dev/sdf /dev/sdg
 zpool create otus4 mirror /dev/sdh /dev/sdi
 ```
-4. Добавил разные алгоритмы сжатия в каждую файловую систему, использую следующие команды
+4. Добавил разные алгоритмы сжатия в каждую файловую систему, использую следующие команды:
 ```
 zfs set compression=lzjb otus1
 zfs set compression=lz4 otus2
@@ -72,7 +72,7 @@ pool: newotus
             
 errors: No known data errors
 ```
-12. Потом определил настройки командой ``zpool get all newotus``  
+12. Потом определил настройки командой ``zpool get all newotus``:  
 ```
 [root@zfs ~]# zfs get all newotus
 NAME  PROPERTY              VALUE                  SOURCE
